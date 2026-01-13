@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Kakung Family | Family Gathering 2026</title>
+
+<meta property="og:title" content="Rundown Kakung Family Gathering 2026">
+<meta property="og:description" content="19-20 Januari 2026 • Villa Royal Family 3, Cisarua">
+<meta property="og:image" content="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&q=80">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* RESET & BASE STYLE */
+* { box-sizing: border-box; }
+body{
+  margin:0;
+  padding:0;
+  font-family: 'Plus Jakarta Sans', sans-serif; /* Font lebih modern */
+  background-color: #f3f4f6; /* Warna background untuk desktop */
+  color:#1f2937;
+  -webkit-font-smoothing: antialiased;
+}
+a{color:#0d9488;text-decoration:none;font-weight:700; transition:0.2s}
+a:hover{color:#0f766e; text-decoration:underline}
+
+/* WRAPPER (Supaya rapi di Laptop & Full di HP) */
+.app-wrapper {
+  max-width: 480px; /* Lebar maksimal seperti HP */
+  margin: 0 auto;
+  background: #ffffff;
+  min-height: 100vh;
+  box-shadow: 0 0 25px rgba(0,0,0,0.1);
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* HERO SECTION */
+.hero{
+  position:relative;
+  height:360px;
+  background:url("https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&q=80") center/cover no-repeat;
+  border-bottom-left-radius: 24px;
+  border-bottom-right-radius: 24px;
+}
+.hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.6));
+  border-bottom-left-radius: 24px;
+  border-bottom-right-radius: 24px;
+}
+.hero-content{
+  position:absolute;
+  inset:0;
+  padding:24px;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  color:white;
+  z-index: 2;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+.hero h1{
+  font-size:32px;
+  margin:0;
+  line-height: 1.2;
+}
+.hero p{
+  margin:8px 0 20px;
+  font-size:14px;
+  color:#f3f4f6;
+  opacity: 0.9;
+}
+
+/* COUNTDOWN */
+.countdown{
+  display:flex;
+  gap:8px;
+}
+.cd-box{
+  background:rgba(0,0,0,0.5);
+  backdrop-filter: blur(5px); /* Efek kaca */
+  padding:8px 10px;
+  border-radius:12px;
+  text-align:center;
+  border:1px solid rgba(255,255,255,0.2);
+  flex: 1;
+}
+.cd-box b{
+  font-size:20px;
+  display:block;
+  line-height: 1;
+  margin-bottom: 2px;
+}
+.cd-box span {
+  font-size: 10px;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+
+/* CONTAINER */
+.container{
+  padding: 20px;
+  margin-top: -30px; /* Overlap ke atas */
+  position: relative;
+  z-index: 3;
+}
+
+/* CARDS */
+.card{
+  background:white;
+  border-radius:20px;
+  padding:20px;
+  margin-bottom:16px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.06);
+  border: 1px solid #f9fafb;
+}
+
+/* TOMBOL PETA */
+.btn-map {
+  display: block;
+  margin-top: 10px;
+  background: #f0fdfa;
+  color: #0d9488;
+  text-align: center;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid #ccfbf1;
+}
+
+/* TABS */
+.tabs{
+  display:flex;
+  background:#f3f4f6;
+  padding: 5px;
+  border-radius: 50px;
+  margin-bottom:20px;
+}
+.tabs button{
+  flex:1;
+  border:none;
+  padding:10px;
+  border-radius:50px;
+  font-weight:700;
+  font-size: 14px;
+  font-family: inherit;
+  cursor:pointer;
+  background:transparent;
+  color: #6b7280;
+  transition: all 0.3s ease;
+}
+.tabs button.active{
+  background:white;
+  color:#0d9488;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+/* RUNDOWN ITEMS */
+.section-title{
+  font-weight:800;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin:20px 0 15px;
+  color:#9ca3af;
+}
+.item{
+  position:relative;
+  padding-left:36px;
+  margin-bottom:24px;
+}
+.item::before{
+  content:"";
+  position:absolute;
+  left:11px;
+  top:5px;
+  bottom:-25px;
+  width:2px;
+  background:#e5e7eb;
+}
+.item:last-child::before{display:none}
+.dot{
+  position:absolute;
+  left:0;
+  top:2px;
+  width:24px;
+  height:24px;
+  background:#ccfbf1;
+  border: 4px solid white;
+  outline: 2px solid #0d9488;
+  border-radius:50%;
+}
+.time{
+  display: inline-block;
+  background: #fff7ed;
+  color: #ea580c;
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+.item p {
+  margin: 0 0 5px 0;
+  font-weight: 700;
+  font-size: 16px;
+  color: #1f2937;
+}
+.item-details{
+  margin:0;
+  padding-left:18px;
+}
+.item-details li{
+  font-size:14px;
+  color:#6b7280;
+  margin-bottom:4px;
+  line-height: 1.5;
+}
+
+/* GALLERY GRID */
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:10px;
+}
+.gallery img{
+  width:100%;
+  aspect-ratio: 4/3;
+  object-fit:cover;
+  border-radius:12px;
+  background: #e5e7eb;
+}
+
+/* INFO STYLES */
+.alert-box {
+  background: #fef2f2;
+  border-left: 4px solid #ef4444;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 6px;
+  font-size: 13px;
+  color: #991b1b;
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  font-size:12px;
+  color:#9ca3af;
+  padding: 20px 0 40px;
+  background: #f9fafb;
+}
+
+/* ANIMASI FADE */
+.tab-content {
+  animation: fadeIn 0.4s ease-out;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+</style>
+</head>
+
+<body>
+
+<div class="app-wrapper">
+
+  <div class="hero">
+    <div class="hero-content">
+      <h1>🏡 Rundown Acara<br>Goes to Villa</h1>
+      <p>Family Gathering • 19–20 Jan 2026</p>
+
+      <div class="countdown">
+        <div class="cd-box"><b id="d">0</b><span>Hari</span></div>
+        <div class="cd-box"><b id="h">0</b><span>Jam</span></div>
+        <div class="cd-box"><b id="m">0</b><span>Mnt</span></div>
+        <div class="cd-box"><b id="s">0</b><span>Dtk</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <div class="card">
+      <b style="font-size: 16px;">📍 Villa Royal Family 3</b>
+      <p style="margin:4px 0 0; color:#6b7280; font-size:14px;">Kopo, Kec. Cisarua, Kab. Bogor</p>
+      <a href="https://goo.gl/maps/unMaB5yVvfxaRphT1" target="_blank" class="btn-map">
+        🗺️ Buka Google Maps
+      </a>
+    </div>
+
+    <div class="tabs">
+      <button class="active" onclick="showTab('day1',this)">Senin 19</button>
+      <button onclick="showTab('day2',this)">Selasa 20</button>
+      <button onclick="showTab('info',this)">Info</button>
+    </div>
+
+    <div id="day1" class="card tab-content">
+      <div class="section-title">Pagi – Siang</div>
+
+      <div class="item">
+        <div class="dot"></div>
+        <div class="time">09.00 – 09.30</div>
+        <p>Bangun & Persiapan</p>
+        <ul class="item-details">
+          <li>Persiapan masing-masing keluarga</li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <div class="dot"></div>
+        <div class="time">09.30 – 10.30</div>
+        <p>Cek Perlengkapan</p>
+        <ul class="item-details">
+          <li>Pakaian & obat pribadi</li>
+          <li>Perlengkapan anak</li>
+          <li>Siapkan logistik</li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <div class="dot"></div>
+        <div class="time">10.30 – 11.30</div>
+        <p>Makan Siang 🍽️</p>
+        <ul class="item-details">
+          <li>Makan siang di rumah masing-masing</li>
+        </ul>
+      </div>
+      
+      <div class="item">
+        <div class="dot"></div>
+        <div class="time">11.30 – 12.00</div>
+        <p>Persiapan Akhir</p>
+        <ul class="item-details">
+          <li>Masukkan barang ke mobil</li>
+          <li>Pastikan rumah aman (listrik/gas)</li>
+        </ul>
+      </div>
+      
+      <div class="item">
+        <div class="dot"></div>
+        <div class="time">12.00 – 14.00</div>
+        <p>OTW Villa 🚗</p>
+        <ul class="item-details">
+          <li>Lewat jalur Parung/Tol</li>
+          <li>Gunakan Google Maps / Waze</li>
+        </ul>
+      </div>
+
+      <div class="section-title">Sore</div>
+
+      <div class="item">
+        <div class="dot"></div>
+        <div class="time">14.00 – 14.30</div>
+        <p>Check-in & Bagi Kamar</p>
+         <ul class="item-details">
+          <li>Check-in villa</li>
+          <li>Konfirmasi ke pengelola</li>
+          <li>Pembagian kamar</li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <div class="dot"></div>
+        <div class="time">14.30 – 15.30</div>
+        <p>Adaptasi & Istirahat</p>
+         <ul class="item-details">
+          <li>Istirahat sejenak</li>
+          <li>Anak-anak adaptasi lingkungan</li>
+        </ul>
+      </div>
+      
+      <div class="item">
+        <div class="dot"></div>
+        <div class="time">15.30 – 17.00</div>
+        <p>Main Kolam & Santai 💦</p>
+        <ul class="item-details">
+          <li>Games ringan keluarga</li>
+          <li>Santai & Fun</li>
+          <li>Ngobrol santai</li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <div class="dot"></div>
+        <div class="time">17.30 – 18.30</div>
+        <p>Persiapan BBQ 🔥🍢</p>
+        <ul class="item-details">
+          <li>Menyiapkan Bahan Makanan</li>
+          <li>Menyiapkan Arang & Alat</li>
+        </ul>
+      </div>
+
+      <div class="section-title">Malam Puncak</div>
+
+      <div class="item">
+        <div class="dot"></div>
+        <div class="time">18.30 – 23.00</div>
+        <p>Family Night & BBQ 🔥</p>
+        <ul class="item-details"> <li>BBQ & Makan Malam</li>
+          <li>Ngobrol Santai</li>
+          <li>Games Seru-seruan</li>
+          <li>Karaoke 🎤</li>
+          <li>Berenang Malam (Bagi yang kuat dingin 🥶)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="day2" class="card tab-content" style="display:none">
+      <div class="section-title">Selasa Pagi</div>
+
+      <div class="item">
+        <div class="dot"></div>
+        <div class="time">06.00 – 06.30</div>
+        <p>Foto Pagi 📸</p>
+        <ul class="item-details">
+          <li>Dokumentasi suasana pagi</li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <div class="dot"></div>
+        <div class="time">06.30 – 07.15</div>
+        <p>Senam Pagi / Jalan Santai 💪</p>
+      </div>
+
+      <div class="item">
+        <div class="dot"></div>
+        <div class="time">07.15 – 08.30</div>
+        <p>Sarapan Bersama 🍳</p>
+      </div>
+      
+      <div class="item">
+        <div class="dot"></div>
+        <div class="time">08.30 – 11.00</div>
+        <p>Free Time / Packing</p>
+        <ul class="item-details">
+          <li>Berenang sesi terakhir</li>
+          <li>Siap-siap packing pulang</li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <div class="dot"></div>
+        <div class="time">12.00</div>
+        <p>Check-out Villa 👋</p>
+        <ul class="item-details">
+          <li>Cek barang agar tidak tertinggal</li>
+          <li>Sayonara!</li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="info" class="card tab-content" style="display:none">
+      <h3 style="margin-top:0; color:#0d9488">ℹ️ Informasi Penting</h3>
+      
+      <div style="background:#f0f9ff; padding:12px; border-radius:10px; margin-bottom:16px;">
+        <p style="margin:0 0 6px;">🍳 <b>Alat Masak:</b> SUDAH TERSEDIA</p>
+        <p style="margin:0 0 6px;">🛒 <b>Logistik:</b> Bawa bahan BBQ & bumbu</p>
+        <p style="margin:0;">🧥 <b>Pakaian:</b> Bawa jaket (Cisarua dingin)</p>
+      </div>
+
+      <h4 style="margin:15px 0 8px; color:#1f2937">Ketentuan Villa</h4>
+      <ul class="item-details">
+        <li>Gunakan fasilitas dengan tanggung jawab.</li>
+        <li>Kerusakan fasilitas ditanggung tamu.</li>
+        <li><b>Denda Muntah:</b> Rp 500.000 (jika kena fasilitas).</li>
+        <li><b>Catering Luar:</b> Charge Rp 300.000/hari.</li>
+      </ul>
+
+      <h4 style="margin:15px 0 8px; color:#1f2937">🔇 Jam Tenang</h4>
+      <ul class="item-details">
+        <li>Harap tenang pukul <b>23.00 – 07.00 WIB</b>.</li>
+      </ul>
+
+      <div class="alert-box">
+        <b>🚫 DILARANG KERAS:</b><br>
+        Narkoba, Membawa Hewan Peliharaan, & Memindahtangankan sewa.
+      </div>
+    </div>
+
+    <div class="card">
+      <b style="display:block; margin-bottom:12px">📸 Suasana Villa</b>
+      <div class="gallery">
+        <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b91d?w=400&q=80" alt="Villa 1">
+        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=400&q=80" alt="Villa 2">
+        <img src="https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?w=400&q=80" alt="Pool">
+        <img src="https://images.unsplash.com/photo-1555529733-0e670560f7e1?w=400&q=80" alt="Room">
+      </div>
+    </div>
+
+    <footer>
+      Dibuat dengan ❤️ untuk<br><b>Kakung Family 2026</b>
+    </footer>
+
+  </div>
+</div>
+
+<script>
+// Logic Pindah Tab
+function showTab(id,btn){
+  document.querySelectorAll('.tab-content').forEach(t=>t.style.display='none');
+  document.getElementById(id).style.display='block';
+  document.querySelectorAll('.tabs button').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+}
+
+// Logic Countdown
+const target = new Date("2026-01-19T14:00:00+07:00").getTime();
+
+const timer = setInterval(()=>{
+  const now = new Date().getTime();
+  const diff = target - now;
+  
+  // Jika waktu habis (Acara dimulai)
+  if(diff < 0) {
+    clearInterval(timer);
+    document.querySelector('.countdown').innerHTML = "<div class='cd-box' style='width:100%; background:#22c55e'><b>ACARA DIMULAI! 🎉</b></div>";
+    return;
+  }
+
+  document.getElementById("d").innerText = Math.floor(diff/(1000*60*60*24));
+  document.getElementById("h").innerText = Math.floor((diff/(1000*60*60))%24);
+  document.getElementById("m").innerText = Math.floor((diff/(1000*60))%60);
+  document.getElementById("s").innerText = Math.floor((diff/1000)%60);
+}, 1000);
+</script>
+
+</body>
+</html>
